@@ -14,20 +14,22 @@ FILE_PATH = 'fisheye_test.jpg'
 dir_name, file_name = os.path.split(FILE_PATH)
 file_name_short, ext = os.path.splitext(file_name)
 
-frame = np.zeros((1100, 2000, 3), np.uint8)
+frame = np.zeros((700, 1500, 3), np.uint8)
 view_scale_format = '%.2Lf'
-SCALE_VALUE_DEFAULT = [1.50]
+SCALE_VALUE_DEFAULT = [1.30]
 scale_value = copy.deepcopy(SCALE_VALUE_DEFAULT)
-PARAM1_DEFAULT = [-0.63]
-PARAM2_DEFAULT = [-0.15]
+PARAM1_DEFAULT = [-0.78]
+PARAM2_DEFAULT = [-0.01]
 PARAM3_DEFAULT = [0.00]
 PARAM4_DEFAULT = [0.00]
-PARAM5_DEFAULT = [0.55]
+PARAM5_DEFAULT = [0.53]
 param1 = copy.deepcopy(PARAM1_DEFAULT)
 param2 = copy.deepcopy(PARAM2_DEFAULT)
 param3 = copy.deepcopy(PARAM3_DEFAULT)
 param4 = copy.deepcopy(PARAM4_DEFAULT)
 param5 = copy.deepcopy(PARAM5_DEFAULT)
+
+display_scale = 1.0
 
 image = Image.open(FILE_PATH)
 image = np.array(image, dtype=np.uint8)
@@ -120,8 +122,8 @@ while True:
     view_image = cv2.resize(
         img,
         None,
-        fx=0.5,
-        fy=0.5,
+        fx=display_scale,
+        fy=display_scale,
         interpolation=cv2.INTER_NEAREST
     )
     cvui.image(frame, 600, 20, view_image[:,:,::-1])
