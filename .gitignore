@@ -1,1 +1,4 @@
 fisheye_test_-*.jpg
+build/
+dist/
+simple_fisheye_calibrator.egg-info/
