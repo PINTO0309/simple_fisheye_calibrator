@@ -41,7 +41,7 @@ while True:
     frame[:] = (60, 60, 60)
 
     cvui.beginRow(frame, 10, 20, 100, 50)
-    cvui.text('FilenPath:', 1.4)
+    cvui.text('FilePath:', 1.4)
     cvui.text(FILE_PATH, 1.4)
     cvui.endRow()
 
