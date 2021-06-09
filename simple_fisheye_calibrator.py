@@ -7,7 +7,6 @@ from PIL import Image
 import cvui
 import sys
 import copy
-<<<<<<< HEAD
 import argparse
 
 
@@ -172,7 +171,6 @@ if __name__ == "__main__":
     window_size_height = args.window_size_height
 
     main(file_path, window_size_width, window_size_height)
-=======
 
 WINDOW_NAME = 'Simple Fisheye Calibrator'
 cvui.init(WINDOW_NAME)
