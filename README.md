@@ -16,7 +16,9 @@ Simple GUI-based correction of fisheye images. The correction parameters specifi
 # 1. Usage
 ```bash
 $ sudo pip3 install cvui Pillow opencv_python numpy --upgrade
-$ git clone https://github.com/PINTO0309/simple_fisheye_calibrator.git && cd simple_fisheye_calibrator
+$ git clone https://github.com/PINTO0309/simple_fisheye_calibrator.git && \
+cd simple_fisheye_calibrator
+
 $ python3 simple_capture.py
 
 # 1. Capture one test image from the USB camera with "c" on the keyboard
