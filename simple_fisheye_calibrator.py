@@ -63,27 +63,27 @@ def main(file_path, window_size_width, window_size_height):
         cvui.endRow()
 
         cvui.beginRow(frame, 10, 220, 100, 50)
-        cvui.text('Param1   :', 1.0)
+        cvui.text('Param1(k1):', 1.0)
         cvui.trackbar(300, param1, -2.00, 2.00, 1, view_scale_format)
         cvui.endRow()
 
         cvui.beginRow(frame, 10, 270, 100, 50)
-        cvui.text('Param2   :', 1.0)
+        cvui.text('Param2(k2):', 1.0)
         cvui.trackbar(300, param2, -2.00, 2.00, 1, view_scale_format)
         cvui.endRow()
 
         cvui.beginRow(frame, 10, 320, 100, 50)
-        cvui.text('Param3   :', 1.0)
+        cvui.text('Param3(p1):', 1.0)
         cvui.trackbar(300, param3, -1.00, 1.00, 1, view_scale_format)
         cvui.endRow()
 
         cvui.beginRow(frame, 10, 370, 100, 50)
-        cvui.text('Param4   :', 1.0)
+        cvui.text('Param4(p2):', 1.0)
         cvui.trackbar(300, param4, -1.00, 1.00, 1, view_scale_format)
         cvui.endRow()
 
         cvui.beginRow(frame, 10, 420, 100, 50)
-        cvui.text('Param5   :', 1.0)
+        cvui.text('Param5(k3):', 1.0)
         cvui.trackbar(300, param5, -2.00, 2.00, 1, view_scale_format)
         cvui.endRow()
 
