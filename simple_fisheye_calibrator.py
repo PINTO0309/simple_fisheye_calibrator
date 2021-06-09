@@ -120,8 +120,8 @@ while True:
     view_image = cv2.resize(
         img,
         None,
-        fx=0.7,
-        fy=0.7,
+        fx=0.5,
+        fy=0.5,
         interpolation=cv2.INTER_NEAREST
     )
     cvui.image(frame, 600, 20, view_image[:,:,::-1])
