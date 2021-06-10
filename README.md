@@ -18,6 +18,36 @@ Simple GUI-based correction of fisheye images. The correction parameters specifi
 ![004](https://user-images.githubusercontent.com/33194443/121445265-15221a80-c9cc-11eb-85ea-7dc25f3a6cc4.jpg)
 
 ## 1. Install
+### 1-1. Launching with Docker (with USB Camera / HostPC GUI)
+- simple_capture
+```
+xhost +local: && \
+docker run -it --rm \
+-v `pwd`:/home/user/workdir \
+-v /tmp/.X11-unix/:/tmp/.X11-unix:rw \
+--device /dev/video0:/dev/video0:mwr \
+--net=host \
+-e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
+-e DISPLAY=$DISPLAY \
+--privileged \
+pinto0309/simple_fisheye_calibrator:0.0.7 \
+sleep 1 && simple_capture
+```
+- simple_fisheye_calibrator
+```
+xhost +local: && \
+docker run -it --rm \
+-v `pwd`:/home/user/workdir \
+-v /tmp/.X11-unix/:/tmp/.X11-unix:rw \
+--device /dev/video0:/dev/video0:mwr \
+--net=host \
+-e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
+-e DISPLAY=$DISPLAY \
+--privileged \
+pinto0309/simple_fisheye_calibrator:0.0.7 \
+simple_fisheye_calibrator --file_path fisheye_test.jpg
+```
+### 1-2. Installation on the host PC
 ```bash
 $ pip3 install -U simple_fisheye_calibrator
 ```
