@@ -14,7 +14,7 @@ if __name__ == "__main__":
     setup(
         name="simple_fisheye_calibrator",
         scripts=scripts,
-        version="0.0.5",
+        version="0.0.6",
         description="Simple GUI-based correction of fisheye images. The correction parameters specified on the screen can be diverted to opencv's fisheye correction parameters.",
         long_description=long_description,
         long_description_content_type="text/markdown",
