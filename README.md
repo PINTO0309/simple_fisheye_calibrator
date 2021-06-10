@@ -22,6 +22,7 @@ $ pip3 install -U simple_fisheye_calibrator
 
 ## 2. Usage
 ```
+$ simple_capture
 $ simple_fisheye_calibrator --file_path xxx.jpg
 ```
 
