@@ -1,7 +1,7 @@
 # simple_fisheye_calibrator
 Simple GUI-based correction of fisheye images. The correction parameters specified on the screen can be diverted to opencv's fisheye correction parameters.
 
-![001](https://user-images.githubusercontent.com/33194443/121445205-f1f76b00-c9cb-11eb-8401-e3866e4f6b7d.gif)
+![001](https://user-images.githubusercontent.com/33194443/121445762-1142c800-c9cd-11eb-8f39-1a70d0020c8f.gif)
 
 - Fisheye image before calibration
 
