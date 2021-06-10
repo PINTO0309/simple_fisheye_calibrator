@@ -3,6 +3,8 @@ Simple GUI-based correction of fisheye images. The correction parameters specifi
 
 ![001](https://user-images.githubusercontent.com/33194443/121445762-1142c800-c9cd-11eb-8f39-1a70d0020c8f.gif)
 
+![005](https://user-images.githubusercontent.com/33194443/121450601-0ab94e00-c9d7-11eb-9173-f0dbb29adab6.gif)
+
 - Fisheye image before calibration
 
 ![002](https://user-images.githubusercontent.com/33194443/121445230-02a7e100-c9cc-11eb-827b-078da31298b8.jpg)
