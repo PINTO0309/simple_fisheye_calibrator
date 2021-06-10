@@ -7,11 +7,14 @@ with open("README.md") as f:
 
 scripts = ["scripts/"+i for i in listdir("scripts")]
 
+def _requires_from_file(filename):
+    return open(filename).read().splitlines()
+
 if __name__ == "__main__":
     setup(
         name="simple_fisheye_calibrator",
         scripts=scripts,
-        version="1.0.0",
+        version="0.0.1",
         description="Simple GUI-based correction of fisheye images. The correction parameters specified on the screen can be diverted to opencv's fisheye correction parameters.",
         long_description=long_description,
         long_description_content_type="text/markdown",
@@ -22,4 +25,5 @@ if __name__ == "__main__":
         packages=find_packages(),
         platforms=["linux", "unix"],
         python_requires=">3.6",
+        install_requires=_requires_from_file('requirements.txt'),
     )
