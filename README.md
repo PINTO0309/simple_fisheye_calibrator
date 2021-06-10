@@ -1,6 +1,8 @@
 # simple_fisheye_calibrator
 Simple GUI-based correction of fisheye images. The correction parameters specified on the screen can be diverted to opencv's fisheye correction parameters.
 
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/simple_fisheye_calibrator?color=2BAF2B&label=Downloads%EF%BC%8FInstalled)](https://pypistats.org/packages/simple_fisheye_calibrator) ![GitHub](https://img.shields.io/github/license/PINTO0309/simple_fisheye_calibrator?color=2BAF2B) [![PyPI](https://img.shields.io/pypi/v/simple_fisheye_calibrator?color=2BAF2B)](https://pypi.org/project/simple_fisheye_calibrator/)
+
 ![001](https://user-images.githubusercontent.com/33194443/121445762-1142c800-c9cd-11eb-8f39-1a70d0020c8f.gif)
 
 ![005](https://user-images.githubusercontent.com/33194443/121450601-0ab94e00-c9d7-11eb-9173-f0dbb29adab6.gif)
