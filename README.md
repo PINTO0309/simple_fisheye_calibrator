@@ -1,17 +1,17 @@
 # simple_fisheye_calibrator
 Simple GUI-based correction of fisheye images. The correction parameters specified on the screen can be diverted to opencv's fisheye correction parameters.
 
-![001](res/001.gif)
+![001](https://user-images.githubusercontent.com/33194443/121445205-f1f76b00-c9cb-11eb-8401-e3866e4f6b7d.gif)
 
 - Fisheye image before calibration
 
-![002](res/002.jpg)
+![002](https://user-images.githubusercontent.com/33194443/121445230-02a7e100-c9cc-11eb-827b-078da31298b8.jpg)
 
-![003](res/003.png)
+![003](https://user-images.githubusercontent.com/33194443/121445245-0b001c00-c9cc-11eb-92db-6d13c0388814.png)
 
 - (Sample) Fisheye image after calibration
 
-![004](res/004.jpg)
+![004](https://user-images.githubusercontent.com/33194443/121445265-15221a80-c9cc-11eb-85ea-7dc25f3a6cc4.jpg)
 
 ## 1. Install
 ```bash
@@ -19,17 +19,23 @@ $ pip3 install -U simple_fisheye_calibrator
 ```
 
 ## 2. Usage
+```
+$ simple_fisheye_calibrator --file_path xxx.jpg
+```
+
+or
+
 ```bash
 $ sudo pip3 install cvui Pillow opencv_python numpy --upgrade
 $ git clone https://github.com/PINTO0309/simple_fisheye_calibrator.git && \
 cd simple_fisheye_calibrator
 
-$ python3 simple_capture.py
+$ python3 simple_fisheye_calibrator/simple_capture.py
 
 # 1. Capture one test image from the USB camera with "c" on the keyboard
 # 2. Exit the capture application with "q" on the keyboard
 
-$ python3 simple_fisheye_calibrator.py
+$ python3 simple_fisheye_calibrator/simple_fisheye_calibrator.py
 ```
 
 ## 3. Parameter
