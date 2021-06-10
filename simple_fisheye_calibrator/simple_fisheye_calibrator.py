@@ -131,7 +131,7 @@ def main(file_path, window_size_width, window_size_height):
             fy=display_scale,
             interpolation=cv2.INTER_NEAREST
         )
-        cvui.image(frame, 600, 20, view_image[:,:,::-1])
+        cvui.image(frame, 600, 70, view_image[:,:,::-1])
 
         if cvui.button(frame, 80, 500, 100, 30, "QUIT"):
             break
