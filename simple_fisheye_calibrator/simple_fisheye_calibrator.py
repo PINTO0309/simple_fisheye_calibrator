@@ -146,7 +146,7 @@ def main(file_path, window_size_width, window_size_height):
 
         if cvui.button(frame, 380, 500, 100, 30, "SAVE"):
             if dir_name:
-                path = f'{dir_name}/{file_name}_{param1[0]}_{param2[0]}_{param3[0]}_{param4[0]}_{param5[0]}{ext}'
+                path = f'{dir_name}/{file_name_short}_{param1[0]}_{param2[0]}_{param3[0]}_{param4[0]}_{param5[0]}{ext}'
             else:
                 path = f'./{file_name_short}_{param1[0]}_{param2[0]}_{param3[0]}_{param4[0]}_{param5[0]}{ext}'
             print(path)
