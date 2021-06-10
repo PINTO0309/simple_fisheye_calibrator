@@ -25,6 +25,10 @@ $ pip3 install -U simple_fisheye_calibrator
 ## 2. Usage
 ```
 $ simple_capture
+
+# 1. Capture one test image from the USB camera with "c" on the keyboard
+# 2. Exit the capture application with "q" on the keyboard
+
 $ simple_fisheye_calibrator --file_path xxx.jpg
 ```
 
