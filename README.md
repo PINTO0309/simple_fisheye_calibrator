@@ -20,7 +20,7 @@ Simple GUI-based correction of fisheye images. The correction parameters specifi
 ## 1. Install
 ### 1-1. Launching with Docker (with USB Camera / HostPC GUI, Docker Image size: 1.4GB)
 - simple_capture
-```
+```bash
 xhost +local: && \
 docker run -it --rm \
 -v `pwd`:/home/user/workdir \
@@ -30,11 +30,14 @@ docker run -it --rm \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -e DISPLAY=$DISPLAY \
 --privileged \
-pinto0309/simple_fisheye_calibrator:0.0.7 \
+pinto0309/simple_fisheye_calibrator:0.0.8 \
 sleep 1 && simple_capture
+
+# 1. Capture one test image from the USB camera with "c" on the keyboard
+# 2. Exit the capture application with "q" on the keyboard
 ```
 - simple_fisheye_calibrator
-```
+```bash
 xhost +local: && \
 docker run -it --rm \
 -v `pwd`:/home/user/workdir \
@@ -44,7 +47,7 @@ docker run -it --rm \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -e DISPLAY=$DISPLAY \
 --privileged \
-pinto0309/simple_fisheye_calibrator:0.0.7 \
+pinto0309/simple_fisheye_calibrator:0.0.8 \
 simple_fisheye_calibrator --file_path fisheye_test.jpg
 ```
 ### 1-2. Installation on the host PC
@@ -53,13 +56,15 @@ $ pip3 install -U simple_fisheye_calibrator
 ```
 
 ## 2. Usage
-```
+```bash
 $ simple_capture
-
 # 1. Capture one test image from the USB camera with "c" on the keyboard
 # 2. Exit the capture application with "q" on the keyboard
 
+# Still image
 $ simple_fisheye_calibrator --file_path xxx.jpg
+# USB Camera: video0
+$ simple_fisheye_calibrator --file_path 0
 ```
 
 or
@@ -74,20 +79,26 @@ $ python3 simple_fisheye_calibrator/simple_capture.py
 # 1. Capture one test image from the USB camera with "c" on the keyboard
 # 2. Exit the capture application with "q" on the keyboard
 
-$ python3 simple_fisheye_calibrator/simple_fisheye_calibrator.py
+# USB Camera: video0
+$ python3 simple_fisheye_calibrator/simple_fisheye_calibrator.py --file_path 0
 ```
 
 ## 3. Parameter
 ```
-usage: simple_fisheye_calibrator.py
-[-h]
-[--file_path FILE_PATH]
-[--window_size_width WINDOW_SIZE_WIDTH]
-[--window_size_height WINDOW_SIZE_HEIGHT]
+usage:
+simple_fisheye_calibrator.py \
+  [-h] \
+  [--file_path FILE_PATH] \
+  [--window_size_width WINDOW_SIZE_WIDTH] \
+  [--window_size_height WINDOW_SIZE_HEIGHT]
 
 optional arguments:
-  -h, --help show this help message and exit
+  -h, --help
+      show this help message and exit
   --file_path FILE_PATH
+      File path of the still image (e.g. xxx.jpg) or device number of the camera (e.g. 0)
   --window_size_width WINDOW_SIZE_WIDTH
+      Default window size width
   --window_size_height WINDOW_SIZE_HEIGHT
+      Default window size height
 ```

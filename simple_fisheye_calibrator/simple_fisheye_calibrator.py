@@ -15,11 +15,31 @@ def main(file_path, window_size_width, window_size_height):
     WINDOW_NAME = 'Simple Fisheye Calibrator'
     cvui.init(WINDOW_NAME)
 
+    cap = None
     FILE_PATH = file_path
-    dir_name, file_name = os.path.split(FILE_PATH)
-    file_name_short, ext = os.path.splitext(file_name)
+    if not file_path.isdecimal():
+        dir_name, file_name = os.path.split(FILE_PATH)
+        file_name_short, ext = os.path.splitext(file_name)
+        image = Image.open(FILE_PATH)
+        image = np.array(image, dtype=np.uint8)
+        h, w = image.shape[0], image.shape[1]
+    else:
+        cap = cv2.VideoCapture(int(FILE_PATH))
+        w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    display_scale = 1.00
+    required_size_of_image_disp_area_w = int(600+w*display_scale)
+    required_size_of_image_disp_area_h = int(70+h*display_scale)
+
+    if required_size_of_image_disp_area_h > window_size_height or \
+        required_size_of_image_disp_area_w > window_size_width:
+
+        window_size_height = required_size_of_image_disp_area_h + 10
+        window_size_width = required_size_of_image_disp_area_w + 10
 
     frame = np.zeros((window_size_height, window_size_width, 3), np.uint8)
+
     view_scale_format = '%.2Lf'
     SCALE_VALUE_DEFAULT = [1.30]
     scale_value = copy.deepcopy(SCALE_VALUE_DEFAULT)
@@ -34,14 +54,15 @@ def main(file_path, window_size_width, window_size_height):
     param4 = copy.deepcopy(PARAM4_DEFAULT)
     param5 = copy.deepcopy(PARAM5_DEFAULT)
 
-    display_scale = 1.00
-
-    image = Image.open(FILE_PATH)
-    image = np.array(image, dtype=np.uint8)
-    h, w = image.shape[0], image.shape[1]
-
     while True:
-        img = image.copy()
+        img = None
+        if not cap:
+            img = image.copy()
+        else:
+            ret, img = cap.read()
+            if not ret:
+                continue
+            img = img[:,:,::-1].astype(np.uint8)
 
         frame[:] = (60, 60, 60)
 
@@ -161,9 +182,9 @@ def main(file_path, window_size_width, window_size_height):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file_path', type=str, default='fisheye_test.jpg')
-    parser.add_argument('--window_size_width', type=int, default=1500)
-    parser.add_argument('--window_size_height', type=int, default=700)
+    parser.add_argument('--file_path', type=str, default='fisheye_test.jpg', help='File path of the still image (e.g. xxx.jpg) or device number of the camera (e.g. 0)')
+    parser.add_argument('--window_size_width', type=int, default=1500, help='Default window size width')
+    parser.add_argument('--window_size_height', type=int, default=700, help='Default window size height')
     args = parser.parse_args()
 
     file_path = args.file_path
