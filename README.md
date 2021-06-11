@@ -64,7 +64,7 @@ docker run -it --rm \
 -e DISPLAY=$DISPLAY \
 --privileged \
 pinto0309/simple_fisheye_calibrator:0.0.8 \
-simple_fisheye_calibrator --file_path 0
+sleep 1 && simple_fisheye_calibrator --file_path 0
 ```
 ### 1-2. Installation on the host PC
 ```bash
