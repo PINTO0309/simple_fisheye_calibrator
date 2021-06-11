@@ -8,7 +8,6 @@ import cvui
 import sys
 import copy
 import argparse
-import time
 
 def main(file_path, window_size_width, window_size_height):
 
@@ -24,7 +23,7 @@ def main(file_path, window_size_width, window_size_height):
         image = np.array(image, dtype=np.uint8)
         h, w = image.shape[0], image.shape[1]
     else:
-        time.sleep(1)
+        print(f'FILE_PATH: {FILE_PATH} type: {type(FILE_PATH)}')
         cap = cv2.VideoCapture(int(FILE_PATH))
         w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
