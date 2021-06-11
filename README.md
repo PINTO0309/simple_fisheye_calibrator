@@ -38,6 +38,7 @@ sleep 1 && simple_capture
 ```
 - simple_fisheye_calibrator
 ```bash
+# Still image
 xhost +local: && \
 docker run -it --rm \
 -v `pwd`:/home/user/workdir \
@@ -49,6 +50,21 @@ docker run -it --rm \
 --privileged \
 pinto0309/simple_fisheye_calibrator:0.0.8 \
 simple_fisheye_calibrator --file_path fisheye_test.jpg
+```
+or
+```bash
+# USB Camera: video0
+xhost +local: && \
+docker run -it --rm \
+-v `pwd`:/home/user/workdir \
+-v /tmp/.X11-unix/:/tmp/.X11-unix:rw \
+--device /dev/video0:/dev/video0:mwr \
+--net=host \
+-e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
+-e DISPLAY=$DISPLAY \
+--privileged \
+pinto0309/simple_fisheye_calibrator:0.0.8 \
+simple_fisheye_calibrator --file_path 0
 ```
 ### 1-2. Installation on the host PC
 ```bash
