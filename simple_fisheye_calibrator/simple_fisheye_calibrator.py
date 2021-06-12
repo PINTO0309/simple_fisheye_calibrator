@@ -182,8 +182,8 @@ def main(file_path, window_size_width, window_size_height):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--file_path', type=str, default='fisheye_test.jpg', help='File path of the still image (e.g. xxx.jpg) or device number of the camera (e.g. 0)')
-    parser.add_argument('--window_size_width', type=int, default=1500, help='Default window size width')
-    parser.add_argument('--window_size_height', type=int, default=700, help='Default window size height')
+    parser.add_argument('--window_size_width', type=int, default=1250, help='Default window size width')
+    parser.add_argument('--window_size_height', type=int, default=560, help='Default window size height')
     args = parser.parse_args()
 
     file_path = args.file_path

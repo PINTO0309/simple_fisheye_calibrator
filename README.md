@@ -30,7 +30,7 @@ docker run -it --rm \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -e DISPLAY=$DISPLAY \
 --privileged \
-pinto0309/simple_fisheye_calibrator:0.0.10 \
+pinto0309/simple_fisheye_calibrator:0.0.11 \
 /bin/bash -c 'sudo simple_capture'
 
 # 1. Capture one test image from the USB camera with "c" on the keyboard
@@ -48,7 +48,7 @@ docker run -it --rm \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -e DISPLAY=$DISPLAY \
 --privileged \
-pinto0309/simple_fisheye_calibrator:0.0.10 \
+pinto0309/simple_fisheye_calibrator:0.0.11 \
 simple_fisheye_calibrator --file_path fisheye_test.jpg
 ```
 or
@@ -63,7 +63,7 @@ docker run -it --rm \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -e DISPLAY=$DISPLAY \
 --privileged \
-pinto0309/simple_fisheye_calibrator:0.0.10 \
+pinto0309/simple_fisheye_calibrator:0.0.11 \
 /bin/bash -c 'sudo simple_fisheye_calibrator --file_path 0'
 ```
 ### 1-2. Installation on the host PC
