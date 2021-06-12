@@ -17,6 +17,10 @@ Simple GUI-based correction of fisheye images. The correction parameters specifi
 
 ![004](https://user-images.githubusercontent.com/33194443/121445265-15221a80-c9cc-11eb-85ea-7dc25f3a6cc4.jpg)
 
+- (Sample) USB Camera: video0 realtime calibration
+
+![006](https://user-images.githubusercontent.com/33194443/121678221-e3a36f00-caf1-11eb-8fa3-aa8d486b4050.gif)
+
 ## 1. Install
 ### 1-1. Launching with Docker (with USB Camera / HostPC GUI, Docker Image size: 1.4GB)
 - simple_capture
